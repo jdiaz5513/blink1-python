@@ -8,7 +8,7 @@ from time import sleep
 # Change this to the number of CPU cores (not physical or virtual processors)
 # in your system. Added because 1.0 load on a multicore system does not
 # actually mean 100% CPU load.
-NUM_CORES = 4
+NUM_CORES = 1 
 
 LOAD_RE = re.compile('.+average:\s(\d+\.\d+),\s(\d+\.\d+),\s(\d+\.\d+)')
 
