@@ -19,6 +19,7 @@ if __name__ == '__main__':
     try:
         while True:
             load_averages = LOAD_RE.match(check_output(['uptime'])).groups()
+            #print check_output(['uptime'])
             one, five, fifteen = [(float(l) / NUM_CORES) * 255 for l in load_averages]
             params = ['blink1-tool', '-q']
             if one > 255 or five > 255 or fifteen > 255:
@@ -29,9 +30,9 @@ if __name__ == '__main__':
                 rgb_val = '{0:.0f},{1:.0f},{2:.0f}'.format(one, five, fifteen)
                 params += ['--rgb', rgb_val]
                 if one > 1275 or five > 1275 or fifteen > 1275:
-                    params += ['-m', '250', '--blink', '20']
+                    params += ['-m', '25', '--blink', '20', '-t', '100']
                 else:
-                    params += ['-m', '500', '--blink', '10']
+                    params += ['-m', '50', '--blink', '10', '-t', '250']
                 call(params)
             else:
                 rgb_val = '{0:.0f},{1:.0f},{2:.0f}'.format(one, five, fifteen)
@@ -39,4 +40,6 @@ if __name__ == '__main__':
                 call(params)
                 sleep(5)
     except KeyboardInterrupt:
+        params = ['blink1-tool', '--off']
+        call(params)
         pass
