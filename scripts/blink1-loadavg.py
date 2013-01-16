@@ -10,7 +10,7 @@ from time import sleep
 # actually mean 100% CPU load.
 NUM_CORES = 1 
 
-LOAD_RE = re.compile('.+average:\s(\d+\.\d+),\s(\d+\.\d+),\s(\d+\.\d+)')
+LOAD_RE = re.compile('.+averages:\s(\d+\.\d+)\s(\d+\.\d+)\s(\d+\.\d+)')
 
 if __name__ == '__main__':
     print 'Modulating blink(1) to the load averages...'
