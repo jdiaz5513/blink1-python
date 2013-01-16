@@ -1,5 +1,7 @@
 blink(1)-python
 ===============
+Python libraries and scripts for ThingM's awesome blink(1)
+
 
 Ooh, what do I get?
 -------------------
@@ -10,8 +12,8 @@ Ooh, what do I get?
 How do I use it?
 ----------------
 
-  - For now, blink1-loadavg will only work on Linux. Make sure you have blink1-tool in your path (and in my case, setuid root)
-  	- Be sure to change the __NUM_CORES__ value to match the number of CPU cores in your system for extra awesomeness.
+  - For now, __blink1-loadavg__ will only work on Linux. Make sure you have blink1-tool in your $PATH (and in my case, setuid root)
+    - Be sure to change the __NUM_CORES__ value to match the number of CPU cores in your system for extra awesomeness.
 
 In the works
 ------------
